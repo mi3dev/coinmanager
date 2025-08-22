@@ -1,5 +1,5 @@
 <?php
-// v1.0
+// v1.1
 namespace App\Controllers;
 
 use App\Core\Auth;

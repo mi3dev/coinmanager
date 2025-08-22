@@ -50,7 +50,6 @@ $routeForPager = $_GET['route'] ?? 'periods/list';
     <table class="min-w-full text-sm">
       <thead class="bg-slate-900 text-slate-400">
         <tr>
-          <th class="px-3 py-2 text-left"><?= sortLink('ID','id',$sort,$dir) ?></th>
           <th class="px-3 py-2 text-left"><?= sortLink('Display','display',$sort,$dir) ?></th>
           <th class="px-3 py-2 text-left"><?= sortLink('Name','name',$sort,$dir) ?></th>
           <th class="px-3 py-2 text-left">Description</th>
@@ -63,7 +62,6 @@ $routeForPager = $_GET['route'] ?? 'periods/list';
       <tbody class="divide-y divide-slate-800">
         <?php foreach ($rows as $r): ?>
           <tr class="hover:bg-slate-800/40">
-            <td class="px-3 py-2"><?= (int)$r['id'] ?></td>
             <td class="px-3 py-2"><?= htmlspecialchars($r['display']) ?></td>
             <td class="px-3 py-2"><?= htmlspecialchars($r['name']) ?></td>
             <td class="px-3 py-2"><?= htmlspecialchars($r['description']) ?></td>
@@ -94,7 +92,7 @@ $routeForPager = $_GET['route'] ?? 'periods/list';
           </tr>
         <?php endforeach; ?>
         <?php if (empty($rows)): ?>
-          <tr><td colspan="8" class="px-3 py-6 text-slate-400">Žádné záznamy.</td></tr>
+          <tr><td colspan="7" class="px-3 py-6 text-slate-400">Žádné záznamy.</td></tr>
         <?php endif; ?>
       </tbody>
     </table>

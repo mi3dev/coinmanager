@@ -135,7 +135,7 @@ $role = $user['role'] ?? 'guest';
           <?php if (in_array($role, ['admin','collector'], true)): ?>
             <div class="px-3 py-1 text-xs uppercase text-slate-500">Číselníky</div>
             <a class="block px-3 py-2 text-sm hover:bg-slate-800" href="<?= Url::build('periods/list') ?>">Období</a>
-            <a class="block px-3 py-2 text-sm hover:bg-slate-800" href="<?= Url::build('catalog/list') ?>">Katalog</a>
+            <a class="block px-3 py-2 text-sm hover:bg-slate-800" href="<?= Url::build('catalogs/list') ?>">Katalog</a>
           <?php endif; ?>
 
           <?php if ($role === 'collector'): ?>

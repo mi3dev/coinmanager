@@ -53,10 +53,10 @@
 - Validace délek dle DB: display(255), name(64), description(255), note(TEXT), yearFrom/yearTo INT (−5000..9999) + kontrola pořadí.
 - View: `periods/list.php` (třídění, stránkování, hledání), `periods/form.php` (zobrazování chyb).
 - Přidán helper `Validator`.
-v0.6.1 – Úprava menu + fix CoinPeriod SELECT (08.08.2025)
+## v0.6.1 – Úprava menu + fix CoinPeriod SELECT (08.08.2025)
 - „Období“ přesunuto pod Číselníky (dropdown v menu + mobile sekce).
 - PeriodsController.list: odstraněn created_at z SELECT/ORDER BY; whitelist sort sloupců zúžen na id,display,name,yearFrom,yearTo.
-v0.7 – Období: audit + soft‑delete + filtry (08.08.2025)
+## v0.7 – Období: audit + soft‑delete + filtry (08.08.2025)
 - DB: přidány sloupce active, created_at/by, updated_at/by, deleted_at/by + indexy.
 - PeriodsController: 
   - list() implicitně zobrazuje jen aktivní; přidán filtr „Zobrazit i neaktivní“.
@@ -111,13 +111,13 @@ v0.7 – Období: audit + soft‑delete + filtry (08.08.2025)
 - `Database.php`: metoda `lastInsertId()` a robustnější konfigurace (`dsn` nebo `host`+`dbname|database`+`port`+`charset`), lepší chybová hlášení.
 
 
-## V 1.0 – první verze aplikace
+## v1.0 – první verze aplikace
 - Základní přihlášení pomocí e-mailu a hesla
 - Role: admin, sběratel, host
 - Administrace katalogu, ceníku a sbírky
 - Napojení na databázi MySQL
 
-## V 1.1 – úprava přihlášení na uživatelské jméno
+## v1.1 – úprava přihlášení na uživatelské jméno
 - Přihlášení přes **uživatelské jméno** místo e-mailu
 - Odstraněn odkaz „Zapomenuté heslo“
 - Odstraněn duplicitní text „© Coin Manager“ z login stránky

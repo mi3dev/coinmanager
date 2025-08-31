@@ -5,7 +5,7 @@ $mode = $mode ?? 'create';
 $isEdit = ($mode === 'edit');
 $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/store';
 ?>
-<section class="space-y-4 max-w-2xl">
+<section class="space-y-4">
   <h1 class="text-lg font-semibold"><?= $isEdit ? 'Upravit období' : 'Přidat období' ?></h1>
 
   <?= View::flashHtml() ?>
@@ -20,7 +20,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
       <label class="block">
         <span class="mb-1 block text-sm text-slate-300">Display (max 255)*</span>
         <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-               type="text" name="display" required
+               type="text" name="display" required maxlength="255"
                value="<?= htmlspecialchars($item['display'] ?? '') ?>">
         <?php if (!empty($errors['display'])): ?>
           <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['display']) ?></div>
@@ -30,7 +30,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
       <label class="block">
         <span class="mb-1 block text-sm text-slate-300">Name (max 64)*</span>
         <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-               type="text" name="name" required
+               type="text" name="name" required maxlength="64"
                value="<?= htmlspecialchars($item['name'] ?? '') ?>">
         <?php if (!empty($errors['name'])): ?>
           <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['name']) ?></div>
@@ -41,7 +41,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
     <label class="block">
       <span class="mb-1 block text-sm text-slate-300">Description (max 255)</span>
       <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-             type="text" name="description"
+             type="text" name="description" maxlength="255"
              value="<?= htmlspecialchars($item['description'] ?? '') ?>">
       <?php if (!empty($errors['description'])): ?>
         <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['description']) ?></div>
@@ -52,7 +52,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
       <label class="block">
         <span class="mb-1 block text-sm text-slate-300">Rok od</span>
         <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-               type="text" name="yearFrom" inputmode="numeric"
+               type="text" name="yearFrom" inputmode="numeric" maxlength="5" pattern="^-?\d{1,4}$"
                value="<?= htmlspecialchars((string)($item['yearFrom'] ?? '')) ?>">
         <?php if (!empty($errors['yearFrom'])): ?>
           <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['yearFrom']) ?></div>
@@ -62,7 +62,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
       <label class="block">
         <span class="mb-1 block text-sm text-slate-300">Rok do</span>
         <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-               type="text" name="yearTo" inputmode="numeric"
+               type="text" name="yearTo" inputmode="numeric" maxlength="5" pattern="^-?\d{1,4}$"
                value="<?= htmlspecialchars((string)($item['yearTo'] ?? '')) ?>">
         <?php if (!empty($errors['yearTo'])): ?>
           <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['yearTo']) ?></div>

@@ -123,3 +123,6 @@ v0.7 – Období: audit + soft‑delete + filtry (08.08.2025)
 - Odstraněn duplicitní text „© Coin Manager“ z login stránky
 - Přidána metoda `findByUsername()` do modelu `User`
 - Úprava kontroleru přihlášení (`AuthController`) pro práci s uživatelským jménem
+
+## V 1.2 – Období: ikony ve filtru
+- Seznam **Období**: tlačítka "Hledat" a "Další filtry" nahrazena ikonami

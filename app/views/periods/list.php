@@ -1,5 +1,5 @@
 <?php
-// v1.2
+// v1.3
 use App\Helpers\Url;
 use App\Helpers\Sort;
 use App\Helpers\View;
@@ -26,9 +26,17 @@ $routeForPager = $_GET['route'] ?? 'periods/list';
       <input type="hidden" name="route" value="periods/list">
       <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm" type="text" name="q"
              placeholder="Hledat (display / name / description)…" value="<?= htmlspecialchars($q ?? '') ?>">
-      <button class="rounded-md border border-slate-700 px-3 py-2 text-sm hover:bg-slate-800">Hledat</button>
-      <button class="rounded-md border border-slate-700 px-3 py-2 text-sm hover:bg-slate-800"
-              type="button" @click="adv=!adv">Další filtry</button>
+      <button class="rounded-md border border-slate-700 p-2 hover:bg-slate-800" title="Hledat" aria-label="Hledat">
+        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 00-4 4 4 4 0 108 0 4 4 0 00-4-4zm-6 4a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <button class="rounded-md border border-slate-700 p-2 hover:bg-slate-800"
+              type="button" @click="adv=!adv" title="Další filtry" aria-label="Další filtry">
+        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-.293.707L13 10.414V15a1 1 0 01-.553.894l-2 1A1 1 0 019 16v-5.586L3.293 6.707A1 1 0 013 6V4z"/>
+        </svg>
+      </button>
     </form>
 
     <form method="get" x-show="adv" x-transition>

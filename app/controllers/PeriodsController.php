@@ -107,8 +107,8 @@ public function list(): void
         if ($e = Validator::str($data['name'], 64, true))     $errors['name'] = $e;
         if ($e = Validator::str($data['description'], 255))   $errors['description'] = $e;
         // note = TEXT → bez limitu (DB limit textu je vysoký), necháme jen trim
-        if ($e = Validator::nullableInt($data['yearFrom'], -5000, 9999)) $errors['yearFrom'] = $e;
-        if ($e = Validator::nullableInt($data['yearTo'],   -5000, 9999)) $errors['yearTo']   = $e;
+        if ($e = Validator::nullableInt($data['yearFrom'], 0, 9999)) $errors['yearFrom'] = $e;
+        if ($e = Validator::nullableInt($data['yearTo'],   0, 9999)) $errors['yearTo']   = $e;
 
 
         // logická vazba roku
@@ -181,8 +181,8 @@ public function list(): void
         if ($e = Validator::str($data['display'], 255, true)) $errors['display'] = $e;
         if ($e = Validator::str($data['name'], 64, true))     $errors['name'] = $e;
         if ($e = Validator::str($data['description'], 255))   $errors['description'] = $e;
-        if ($e = Validator::nullableInt($data['yearFrom'], -5000, 9999)) $errors['yearFrom'] = $e;
-        if ($e = Validator::nullableInt($data['yearTo'],   -5000, 9999)) $errors['yearTo']   = $e;
+        if ($e = Validator::nullableInt($data['yearFrom'], 0, 9999)) $errors['yearFrom'] = $e;
+        if ($e = Validator::nullableInt($data['yearTo'],   0, 9999)) $errors['yearTo']   = $e;
         if ($data['yearFrom'] !== '' && $data['yearTo'] !== '' && (int)$data['yearFrom'] > (int)$data['yearTo']) {
             $errors['yearTo'] = 'Rok „do“ musí být ≥ „od“.';
         }

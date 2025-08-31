@@ -122,4 +122,8 @@ v0.7 – Období: audit + soft‑delete + filtry (08.08.2025)
 - Odstraněn odkaz „Zapomenuté heslo“
 - Odstraněn duplicitní text „© Coin Manager“ z login stránky
 - Přidána metoda `findByUsername()` do modelu `User`
-- Úprava kontroleru přihlášení (`AuthController`) pro práci s uživatelským jménem
+ - Úprava kontroleru přihlášení (`AuthController`) pro práci s uživatelským jménem
+
+## V 1.1.1 – validace roku u období
+- Formulář období: pole „Rok od“ a „Rok do“ přijímají pouze čísla 0–9999 (max 4 znaky).
+- Serverová validace let byla omezena na rozsah 0–9999.

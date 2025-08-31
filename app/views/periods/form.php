@@ -52,7 +52,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
       <label class="block">
         <span class="mb-1 block text-sm text-slate-300">Rok od</span>
         <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-               type="text" name="yearFrom" inputmode="numeric"
+               type="text" name="yearFrom" inputmode="numeric" pattern="[0-9]{0,4}" maxlength="4"
                value="<?= htmlspecialchars((string)($item['yearFrom'] ?? '')) ?>">
         <?php if (!empty($errors['yearFrom'])): ?>
           <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['yearFrom']) ?></div>
@@ -62,7 +62,7 @@ $action = $isEdit ? 'index.php?route=periods/update' : 'index.php?route=periods/
       <label class="block">
         <span class="mb-1 block text-sm text-slate-300">Rok do</span>
         <input class="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm"
-               type="text" name="yearTo" inputmode="numeric"
+               type="text" name="yearTo" inputmode="numeric" pattern="[0-9]{0,4}" maxlength="4"
                value="<?= htmlspecialchars((string)($item['yearTo'] ?? '')) ?>">
         <?php if (!empty($errors['yearTo'])): ?>
           <div class="mt-1 text-xs text-red-300"><?= htmlspecialchars($errors['yearTo']) ?></div>

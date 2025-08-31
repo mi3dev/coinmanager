@@ -110,6 +110,8 @@ v0.7 – Období: audit + soft‑delete + filtry (08.08.2025)
 - `Auth.php`: doplněny `start()`, `check()`, `user()`, `id()`, `login()`, `logout()`, `requireRole()`, `requireAnyRole()`.
 - `Database.php`: metoda `lastInsertId()` a robustnější konfigurace (`dsn` nebo `host`+`dbname|database`+`port`+`charset`), lepší chybová hlášení.
 
+## v0.9.3 – Období: tlačítko „Zrušit filtr“ (13.08.2025)
+- Seznam období: přidáno tlačítko pro zrušení filtrů včetně ikony.
 
 ## V 1.0 – první verze aplikace
 - Základní přihlášení pomocí e-mailu a hesla
